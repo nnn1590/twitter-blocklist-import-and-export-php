@@ -15,7 +15,7 @@
 
 			echo(htmlspecialchars($_SESSION['account_info']->name.'(@'.$_SESSION['account_info']->screen_name.')'));
 		?>!</h1>
-		<s><!-- TODO: Implement --><a href="import.html">(TODO)Import</a></s><br>
+		<a href="import.html">Import</a><br>
 		<a href="export.html">Export</a><br>
 		<a href="logout.php">Logout(destory php session)</a>
 		<hr>
