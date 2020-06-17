@@ -17,7 +17,7 @@
 		}
 		foreach ($ids as $id) {
 			if ($id !== "") {
-				$connection->post("blocks/create", ['user_id' => $id, 'include_entities' = false, 'skip_status' = true]);
+				$connection->post("blocks/create", ['user_id' => $id, 'include_entities' => false, 'skip_status' => true]);
 			}
 		}
 	} else {
