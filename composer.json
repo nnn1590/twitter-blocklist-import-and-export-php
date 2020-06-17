@@ -1,0 +1,19 @@
+{
+	"name": "nnn1590/twitter-blocklist-import-and-export-php",
+	"license": "GPL-3.0-or-later",
+	"type": "project",
+	"authors": [
+		{
+			"name": "NNN1590",
+			"email": "nnn1590@nnn1590.org",
+			"homepage": "https://nnn1590.org",
+			"role": "Developer"
+		}
+	],
+	"keywords": [
+		"twitter"
+	],
+	"require": {
+		"abraham/twitteroauth": "^1.1"
+	}
+}
