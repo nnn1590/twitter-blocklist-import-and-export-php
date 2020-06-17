@@ -2,7 +2,7 @@
 	session_start();
 
 	header("Content-Type: application/octet-stream");
-	header("Content-Disposition: attachment; filename=".$_SESSION['screen_name']."_".date("Ymd").".csv");
+	header("Content-Disposition: attachment; filename=".$_SESSION['account_info']->screen_name."_".date("Ymd").".csv");
 	header("Content-Transfer-Encoding: binary");
 
 	require_once "config.php";
