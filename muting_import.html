@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Twitter following/followers/blocking list importer and exporter PHP</title>
+	</head>
+	<body>
+		WARNING: This page will block even if you are following them, or being followed by them, or both.
+		Be careful not to ruin your relationships...
+		<!-- TODO: Select the user to import(block) with the check box (checked by default, expect if following/followed) -->
+		<form action="importlist.php?what_imexport=mutes%2Fusers" method="post" enctype="multipart/form-data">
+			<input type="file" name="filename">
+			<input type="submit">
+		</form>
+	</body>
+</html>

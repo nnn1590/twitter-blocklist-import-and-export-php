@@ -25,6 +25,9 @@
 					case "blocks":
 						$connection->post("blocks/create", ['user_id' => $id, 'include_entities' => false, 'skip_status' => true]);
 						break;
+					case "mutes/users":
+						$connection->post("mutes/users/create", ['user_id' => $id]);
+						break;
 					default:
 						die('ERROR: Unknown what to import: ('.$_GET['what_imexport'].')');
 						break;

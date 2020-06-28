@@ -15,10 +15,13 @@
 	$ids = array();
 	$cursor = -1;
 	if (!isset($_GET['what_imexport'])) die('ERROR: what_imexport is not define or it\'s null');
-	if ($_GET['what_imexport'] !== "friends" && $_GET['what_imexport'] !== "followers" && $_GET['what_imexport'] !== "blocks")
+	if ($_GET['what_imexport'] !== "friends" && $_GET['what_imexport'] !== "followers" && $_GET['what_imexport'] !== "blocks" && $_GET['what_imexport'] !== "mutes/users"
+	&& $_GET['what_imexport'] !== "friendships/incoming")
 		die('ERROR: Unknown what to export: ('.$_GET['what_imexport'].')');
+	$what_imexport = $_GET['what_imexport'];
+	if ($what_imexport != 'friendships/incoming') $what_imexport.="/ids";
 	do {
-		$result = $connection->get($_GET['what_imexport']."/ids", ['cursor' => $cursor]);
+		$result = $connection->get($what_imexport, ['cursor' => $cursor]);
 		if (!is_array($result->ids)) {
 			die('ERROR: Not array ('.gettype($result->ids).')');
 		}
