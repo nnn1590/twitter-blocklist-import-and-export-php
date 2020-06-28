@@ -37,7 +37,7 @@
 				<a href="blocking_export.html">Export</a>
 			</div>
 			<div class="bullet">
-				<div>Muting</div>
+				<div>Muting users</div>
 				<a href="muting_import.html">Import</a>
 				<a href="muting_export.html">Export</a>
 			</div>
