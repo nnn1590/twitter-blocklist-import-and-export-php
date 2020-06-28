@@ -5,6 +5,7 @@
 	require "vendor/autoload.php";
 	use Abraham\TwitterOAuth\TwitterOAuth;
 
+	if (isset($_GET['denied'])) die('ERROR: Access to Twitter is denied, probably the user refused');
 	$request_token = array();
 	$request_token['oauth_token'] = $_SESSION['oauth_token'];
 	$request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];

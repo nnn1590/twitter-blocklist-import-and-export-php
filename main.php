@@ -3,22 +3,42 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Twitter blocklist importer and exporter PHP</title>
+		<title>Twitter following/followers/blocking list importer and exporter PHP</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
-		<h1>Welcome, <?php session_start();
-			session_start();
-
-			require_once "config.php";
-			require "vendor/autoload.php";
-			use Abraham\TwitterOAuth\TwitterOAuth;
-
-			echo(htmlspecialchars($_SESSION['account_info']->name.'(@'.$_SESSION['account_info']->screen_name.')'));
-		?>!</h1>
-		<a href="import.html">Import</a><br>
-		<a href="export.html">Export</a><br>
-		<a href="logout.php">Logout(destory php session)</a>
-		<hr>
-		<a href="https://github.com/nnn1590/twitter-blocklist-import-and-export-php">Source code</a>
+		<div class="main">
+			<h1>Hello, <?php
+				session_start();
+				if (isset($_SESSION['account_info'])) {
+					echo(htmlspecialchars($_SESSION['account_info']->name.'(@'.$_SESSION['account_info']->screen_name.')!'));
+				} else {
+					echo(htmlspecialchars('Anonymous! (Seems not to be logged in.)'));
+				}
+			?></h1>
+			<div class="note_warning">
+				WARNING: This app/tool does not specifically consider Twitter API rate limits or account lock/suspend.
+				Please be careful when using...<br><br>
+				警告: このアプリ/ツールはTwitter APIのレートリミットやアカウントのロック/凍結について特に考慮していません。
+				使用する場合は気をつけてください…
+			</div>
+			<div class="bullet">
+				<div>Following</div>
+				<a href="following_import.html">Import</a>
+				<a href="following_export.html">Export</a>
+			</div>
+			<div class="bullet">
+				<div>Followers</div>
+				<a href="followers_export.html">Export</a>
+			</div>
+			<div class="bullet">
+				<div>Blocking</div>
+				<a href="blocking_import.html">Import</a>
+				<a href="blocking_export.html">Export</a>
+			</div>
+			<a href="logout.php">Logout(destory php session)</a>
+			<hr>
+			<a href="https://github.com/nnn1590/twitter-blocklist-import-and-export-php">Source code</a>
+		</div>
 	</body>
 </html>

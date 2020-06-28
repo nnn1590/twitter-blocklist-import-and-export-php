@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #AAA
+}
+
+.main {
+	margin: 0px;
+	padding: 10px;
+	background: #F8F8F8;
+}
+@media screen and (min-width:700px) {
+	.main {
+		width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+div.bullet {
+	display: table;
+	font-size: 20px;
+	width: 100%;
+	background: #EEE;
+	border: 1px solid #666;
+}
+div.bullet + div.bullet {
+	border-top: 0;
+}
+div.bullet > * {
+	display: table-cell;
+}
+div.bullet > div {
+	padding: 20px;
+}
+div.bullet > a {
+	width: 100px;
+	background: #DDD;
+	border-left: 1px solid #666;
+	text-align: center;
+	transition: 0.15s;
+}
+div.bullet > a:hover {
+	background: #F3F3F3;
+}
+div.bullet > a:active {
+	background: #AAA;
+}
+
+.note_warning {
+	background: #DD1A;
+	margin-bottom: 16px;
+}

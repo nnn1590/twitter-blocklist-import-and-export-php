@@ -17,8 +17,18 @@
 		}
 		foreach ($ids as $id) {
 			if ($id !== "") {
-				$connection->post("blocks/create", ['user_id' => $id, 'include_entities' => false, 'skip_status' => true]);
-			}
+				if (!isset($_GET['what_imexport'])) die('ERROR: what_imexport is not define or it\'s null');
+				switch ($_GET['what_imexport']) {
+					case "friends":
+						$connection->post("friendships/create", ['user_id' => $id, 'follow' => false]);
+						break;
+					case "blocks":
+						$connection->post("blocks/create", ['user_id' => $id, 'include_entities' => false, 'skip_status' => true]);
+						break;
+					default:
+						die('ERROR: Unknown what to import: ('.$_GET['what_imexport'].')');
+						break;
+				}
 		}
 	} else {
 		echo "ERROR: Please select a file.";
