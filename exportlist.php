@@ -19,21 +19,21 @@
 		die('ERROR: Unknown what to export: ('.$_GET['what_imexport'].')');
 	do {
 		$result = $connection->get($_GET['what_imexport']."/ids", ['cursor' => $cursor]);
-			if (!is_array($result->ids)) {
-				die('ERROR: Not array ('.gettype($result->ids).')');
-			}
-			foreach ($result->ids as $id) {
-				echo $id."\n";
-				/**
-				* The CSV of the block list that used to be available for download in the Twitter Web Client didn't have a newline at end of file. 
-				* If you like it, uncomment here.(Don't forget to delete above 'echo $id."\n";'.)
+		if (!is_array($result->ids)) {
+			die('ERROR: Not array ('.gettype($result->ids).')');
+		}
+		foreach ($result->ids as $id) {
+			echo $id."\n";
+			/**
+			* The CSV of the block list that used to be available for download in the Twitter Web Client didn't have a newline at end of file. 
+			* If you like it, uncomment here.(Don't forget to delete above 'echo $id."\n";'.)
+			echo $id;
 
-				echo $id;
-				if ($id !== end($result->ids)) {
-					echo "\n";
-				}
-				*/
+			if ($id !== end($result->ids)) {
+				echo "\n";
 			}
-			$cursor = $result->next_cursor;
+			*/
+		}
+		$cursor = $result->next_cursor;
 	} while ($cursor != 0);
 ?>
