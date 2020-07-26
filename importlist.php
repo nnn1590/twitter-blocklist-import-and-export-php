@@ -32,6 +32,7 @@
 						die('ERROR: Unknown what to import: ('.$_GET['what_imexport'].')');
 						break;
 				}
+			}
 		}
 	} else {
 		echo "ERROR: Please select a file.";
