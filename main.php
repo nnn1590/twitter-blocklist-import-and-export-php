@@ -13,7 +13,7 @@
 				if (isset($_SESSION['account_info'])) {
 					echo(htmlspecialchars($_SESSION['account_info']->name.'(@'.$_SESSION['account_info']->screen_name.')!'));
 				} else {
-					echo(htmlspecialchars('Anonymous! (Seems not to be logged in.)'));
+					echo(htmlspecialchars('Anonymous! (Seems not to be logged in.)')." <a href=\"login.php\">Login</a>");
 				}
 			?></h1>
 			<div class="note_warning">
