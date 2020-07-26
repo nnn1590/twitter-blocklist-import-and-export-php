@@ -11,8 +11,8 @@
 		<!-- TODO: Select the user to import(block) with the check box (checked by default, expect if following/followed) -->
 		<form action="importlist.php?what_imexport=blocks" method="post" enctype="multipart/form-data">
 			<input type="file" name="filename">
+			<label><input type="checkbox" name="mode2" value="true" checked>Mode2(Maybe faster, but consuming more API rate limits)</label>
 			<input type="submit">
-			<input type="checkbox" name="mode2" value="true">Mode2(Maybe faster, but consuming more API rate limits)
 		</form>
 	</body>
 </html>
