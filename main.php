@@ -24,7 +24,7 @@
 			</div>
 			<div class="bullet">
 				<div>Following</div>
-				<a href="following_import.html">Import</a>
+				<!--<a href="following_import.html">Import</a>-->
 				<a href="following_export.html">Export</a>
 			</div>
 			<div class="bullet">
